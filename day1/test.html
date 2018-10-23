@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        /* span{
+            width: 200px;
+            height: 200px;
+            display: block;
+        } */
+        .ff{
+            text-align: center;
+            line-height: 200px;
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            background: -webkit-linear-gradient(left top,red,blue,green);
+            /*从左上到右下的颜色渐变*/
+            box-shadow: 3px 3px 3px 3px
+            
+        }
+        .cc{
+            width: 400px;
+            height: 50px;
+            text-align: center;
+            line-height: 50px;
+            border-radius: 50px;
+            border: 10px solid #ccc;
+            background: chocolate 
+        }
+        #oDiv{
+            background: blue;
+        }
+        /*
+            css选择器的权重 id 100；类名class 10 标签选择器 1
+        */
+        /* 标准的盒子模型 padding和boder都是往外撑box-sizing：content-box
+            IE的盒子 padding和boder往里缩
+            box-sizing：border-box
+         */
+        .box{
+            width: 100px;
+            height: 100px;
+            background:#ccc;
+            border:10px dashed #000;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+<body>
+    <!-- <span>石家庄职业技术学院</span>
+    <img src="a.jpg" alt="" srcset="">
+    <span>石家庄职业技术学院</span> -->
+    <!-- <div class="ff">石家庄职业技术学院</div> -->
+    <!-- <div class="cc" id="oDiv">前端培优班</div> -->
+    <!-- <div class='box'></div> -->
+    <!-- parseInt 只要第一个是非数字那么结果就为NaN若第一个不是非数字则查找到分数字时结束查找
+        Number 空字符串或字符串只有空格 结果为0 只要有非数字结果为nan -->
+    
+    
+</body>
+</html>
+<script>
+        function sum(){
+            var sum=0;
+        //    arguments 实参集合 
+           for(lit i=0;i<arguments.length;i++){
+               console.log(arguments[i]);
+               sum=sum+ arguments[i];
+           }
+           return sum 
+    }
+    var q=sum(1,2,3,4,5);
+    console.log(q);
+    //布尔数据类型有5个是false，其他全是true  Boolean
+    //0 NaN '' null undefined
+    //!代表取反，!!代表取反后再取反，!!这个操作等同于boolean(1)
+    var a=1||2;
+    var b=1&&2;
+    //对于&&来说前边成立给后边，前边不成立给前边
+    //对于||来说前边成立给前边，前边不成立给后边
+    var c=0||sum(1,2,3)
+    console.log('0'==0);//相对比较会把不同数据类型的数据转换成同数据类型，再比较
+    console.log([]==false);//先把引用数据类型转换为字符串，再把字符串转化为数值 toString()
+    console.log(![]==false);//先把空数组转化为布尔型true，再取反
+    //绝对比较，先看两边是否为同一数据类型若不是直接false，若是则再做比较
+    // '0'!=1相对不等
+    //'0'!==1绝对不等 
+    /*Js中的数据类型分为2大类
+    基本数据类型 String number boolean null underfined
+    引用数据类型 [] {} function Data Math 正则 。。。。
+    基本数据类型操作的都是一个值，引用数据类型操作的都是一个地址
+    */
+    var name='珠峰',age=9;
+    var str=`我的名字是$(name)
+    我的年龄是$(age)`;
+    //es6的字符串模板
+    var str2='124\'sdf';//若想用单引号包含单引号；我们需要用\把字符串中的单引号转义
+    //number类型 NaN!=NaN
+    Number();
+    parseInt();
+    parseFloat();
+    isNaN();//判断参数是否为NaN 若是则返回true ,否则返回false
+    null==undefined//true
+    null === undefined//false
+    typeof(1)//查看数据类型 括号可省 返回结果是个字符串
+    //Boolean
+    //Boolean;1;11
+    Number([1])//先把数组转换为字符串,再把字符串转化为数值
+    var obj={name:'zf',age:9}
+    console.log(obj.name)
+    //获取属性值的两种方式一种是打点另一种是中括号，中括号这种方式一般适用于属性值是通过变量获取的情况
+    Number([1,2])
+    for(var i=0;i<10;i++){
+        switch (i%4) {
+            case 1:
+            case 3:
+                i +=1
+                break;
+            case 0:
+            case 2:
+                i +=2
+                break;
+            default:
+                break;
+        }
+    }
+    console.log(i);
+    var ary=[1,2,3,4]
+    var obj={name:'zf',age:9}
+    for(var k in obj){
+        //k对象的属性名
+    }
+</script>
